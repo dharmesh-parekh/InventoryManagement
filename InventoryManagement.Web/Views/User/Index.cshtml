@@ -1,0 +1,49 @@
+﻿@using InventoryManagement.Library.Resources;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="book-example panel panel-primary">
+    <div class="panel-heading panel-head">@Label.UserManagement</div>
+    <div class="panel-body">      
+        <table id="tblUser" class="table table-striped table-bordered table-hover dt-responsive" style="margin: 4px">
+            <thead>
+                <tr>
+                    <th>
+                        <label>@Label.FirstName</label>
+                    </th>
+                    <th>
+                        <label>@Label.LastName</label>
+                    </th>
+                    <th>
+                        <label>@Label.Email</label>
+                    </th>
+                    <th>
+                        <label>@Label.MobileNo</label>
+                    </th>
+                    <th>
+                        <label>@Label.Role</label>
+                    </th>
+                    <th>
+                        <label>@Label.IsActive</label>
+                    </th>
+                    <th style="width:125px;">
+                        <label>@Label.Action</label>
+                    </th>                    
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts
+{
+   <script type="text/javascript">
+       UserJS.InitializeUserDatatable();
+    </script>
+}

@@ -1,0 +1,98 @@
+﻿
+@using InventoryManagement.Library.Resources;
+
+@model InventoryManagement.Web.Models.UserModel
+
+
+@using (Html.BeginForm("Save", "User", FormMethod.Post, new { id = "frmUserCreate", role = "form", onsubmit = "UserJS.SaveUser(event,this)" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(m => m.UserId, new { id = "UserId" })
+
+    <div class="alert alert-danger display-hide">
+        <button class="close" data-close="alert"></button>
+        <span id="UserValidationSummary" class="validation-summary-errors"></span>
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>@Label.FirstName</label>
+                @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", @maxlength = "50" })
+                @Html.ValidationMessageFor(x => x.FirstName)
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>@Label.LastName</label>
+                @Html.TextBoxFor(model => model.LastName, new { @class = "form-control", @maxlength = "50" })
+                @Html.ValidationMessageFor(x => x.LastName)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>@Label.Email</label>
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @maxlength = "50" })
+                @Html.ValidationMessageFor(x => x.Email)
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>@Label.Password</label>
+                @Html.PasswordFor(model => model.Password, new { @class = "form-control", @maxlength = "50", @value = Model.Password })
+                @Html.ValidationMessageFor(x => x.Password)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>@Label.MobileNo</label>
+                @Html.TextBoxFor(model => model.MobileNo, new { @class = "form-control", @maxlength = "50" })
+                @Html.ValidationMessageFor(x => x.MobileNo)
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>@Label.Role</label>
+                @Html.DropDownListFor(model => model.RoleId, new SelectList(Model.Roles, "Value", "Text"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.RoleId)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>
+                    @Html.CheckBoxFor(model => model.IsActive)  @Label.IsActive
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="modal-footer">
+                <div class="pull-right">
+                    <button class="btn btn-default" data-dismiss="modal" type="button"><i class='fa fa-ban'></i> Cancel</button>
+                    <button class="btn btn-success" type="submit"><i class='fa fa-save'></i> Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    $(function () {
+        $("form").removeData("validator");
+        $("form").removeData("unobtrusiveValidation");
+        $.validator.unobtrusive.parse("form");
+    });
+</script>
+
+
+
+

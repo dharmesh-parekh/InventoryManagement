@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2fb026ff0dde44eeaa75df732c997c6a" Name="Diagram1">
+        <EntityTypeShape EntityType="InventoryManagementEntities.Models.Role" Width="1.5" PointX="3.375" PointY="1.375" />
+        <EntityTypeShape EntityType="InventoryManagementEntities.Models.Car" Width="1.5" PointX="7.875" PointY="6" />
+        <EntityTypeShape EntityType="InventoryManagementEntities.Models.User" Width="1.5" PointX="5.625" PointY="5.875" />
+        <AssociationConnector Association="InventoryManagementEntities.Models.FK_Car_Car" />
+        <AssociationConnector Association="InventoryManagementEntities.Models.FK_User_Role" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

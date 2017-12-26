@@ -1,0 +1,46 @@
+﻿@using InventoryManagement.Library.Resources;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="book-example panel panel-primary">
+    <div class="panel-heading panel-head">@Label.CarManament</div>
+    <div class="panel-body">      
+        <table id="tblCar" class="table table-striped table-bordered table-hover dt-responsive" style="margin: 4px">
+            <thead>
+                <tr>
+                    <th>
+                        <label>@Label.Brand</label>
+                    </th>
+                    <th>
+                        <label>@Label.Model</label>
+                    </th>
+                    <th>
+                        <label>@Label.Year</label>
+                    </th>
+                    <th>
+                        <label>@Label.Price</label>
+                    </th>                   
+                    <th>
+                        <label>@Label.New</label>
+                    </th>
+                    <th style="width:125px;">
+                        <label>@Label.Action</label>
+                    </th>                    
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts
+{
+   <script type="text/javascript">
+       CarJS.InitializeCarDatatable();
+    </script>
+}

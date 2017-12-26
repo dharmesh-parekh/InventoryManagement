@@ -1,0 +1,89 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.display-none,
+.display-hide {
+  display: none; }
+
+
+.field-validation-error, .validation-summary-errors {
+    color: #b94a48;
+    display: inline;
+    vertical-align: middle;
+    font-weight: 500;
+    *zoom: 1;
+}
+
+/*.field-validation-valid {
+    display: none;
+}*/
+
+.input-validation-error {
+    /*
+    border: 1px solid #ff0000;
+    
+    */
+    /*color: #b94a48;*/
+    border-color: #b94a48;
+    background-color: #ffeeee;
+    /*background: pink; border: 1px solid red;*/
+}
+
+form label.error {
+    color: #b94a48;
+    margin-left: 5px;
+}
+
+form input.error, form input.error:hover, form input.error:focus, form select.error,
+form textarea.error {
+    border: 1px solid #b94a48;
+    background: #ffeeee;
+}
+
+.input-validation-error:focus {
+    border-color: #953b39;
+    -webkit-box-shadow: 0 0 6px #d59392;
+    -moz-box-shadow: 0 0 6px #d59392;
+    box-shadow: 0 0 6px #d59392;
+}
+
+.validation-summary-errors {
+    /*font-weight: bold;*/
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/*/* Important part */
+.modal-dialog {
+    overflow-y: initial !important;
+}
+
+.modal-body {
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+}

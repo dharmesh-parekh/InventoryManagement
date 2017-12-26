@@ -1,0 +1,9 @@
+2017-10-26 15:35:23,127 [26] ERROR InventoryManagement.Web.MvcApplication - Error Message: Index and length must refer to a location within the string.
+Parameter name: length
+System.ArgumentOutOfRangeException: Index and length must refer to a location within the string.
+Parameter name: length
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at InventoryManagement.Web.MvcApplication.Application_Start() in D:\Projects\InventoryManagement\SourceCode\InventoryManagement.Web\Global.asax.cs:line 25
+2017-10-26 16:57:20,937 [30] ERROR GeneralLog - 00000000-0000-0000-0000-000000000000 D:\Projects\InventoryManagement\SourceCode\InventoryManagement.Web\Controllers\UserController.cs GetUserList 61 General Error
+Ex Message:Attempted to divide by zero.
+Stack Trace   at InventoryManagement.Web.Controllers.UserController.GetUserList(JQueryDataTableParams param) in D:\Projects\InventoryManagement\SourceCode\InventoryManagement.Web\Controllers\UserController.cs:line 38

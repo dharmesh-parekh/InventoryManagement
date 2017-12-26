@@ -1,0 +1,84 @@
+﻿
+
+@using InventoryManagement.Library.Resources;
+
+@model InventoryManagement.Web.Models.CarModel
+
+
+@using (Html.BeginForm("Save", "Car", FormMethod.Post, new { id = "frmCarCreate", role = "form", onsubmit = "CarJS.SaveCar(event,this)" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(m => m.CarId, new { id = "CarId" })
+
+    <div class="alert alert-danger display-hide">
+        <button class="close" data-close="alert"></button>
+        <span id="CarValidationSummary" class="validation-summary-errors"></span>
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>@Label.Brand</label>
+                @Html.TextBoxFor(model => model.Brand, new { @class = "form-control", @maxlength = "50" })
+                @Html.ValidationMessageFor(x => x.Brand)
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>@Label.Model</label>
+                @Html.TextBoxFor(model => model.Model, new { @class = "form-control", @maxlength = "50" })
+                @Html.ValidationMessageFor(x => x.Model)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>@Label.Year</label>
+                @Html.TextBoxFor(model => model.Year, new { @class = "form-control", @maxlength = "10" })
+                @Html.ValidationMessageFor(x => x.Year)
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>@Label.Price</label>
+                @Html.TextBoxFor(model => model.Price, new { @class = "form-control", @maxlength = "15" })
+                @Html.ValidationMessageFor(x => x.Price)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>
+                    @Html.CheckBoxFor(model => model.New) @Label.New
+                </label>            
+            </div>
+        </div>
+      
+    </div>   
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="modal-footer">
+                <div class="pull-right">
+                    <button class="btn btn-default" data-dismiss="modal" type="button"><i class='fa fa-ban'></i> Cancel</button>
+                    <button class="btn btn-success" type="submit"><i class='fa fa-save'></i> Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    $(function () {
+        $("form").removeData("validator");
+        $("form").removeData("unobtrusiveValidation");
+        $.validator.unobtrusive.parse("form");
+    });
+</script>
+
+
+
+
